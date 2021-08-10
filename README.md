@@ -74,8 +74,18 @@ Ir al menu lateral izquierdo, en la sección **Plugins**, seleccionar la opción
 Para activar el plugin , ir al menu lateral izquierdo, en la sección **Plugins**, y seleccionar **Activar** en el plugin de Pagando. Cuando se ha realizado correctamente , deberá aparecer **Pagando** en el menú lateral izquierdo.
 
 ### 4. Agregar credenciales.
-Para poder aceptar pagos con **Pagando**, es necesario configurar el usuario y la llave generados en la plataforma de **Pagando**.
+Para poder aceptar pagos con **Pagando Check**, es necesario configurar el usuario y la llave de prueba generados en la plataforma de **Pagando**.
+
+En el panel de administración ,seleccionar la opción **Api para sitio web**. En la siguiente sección **"Genera tu llave de Pruebas"** incluye un usuario y la opción de recuperar una clave pública para la prueba, si lo desea, es posible generar una nueva clave cada vez que lo desee por seguridad.
+
+-**Consultar (Obtener clave) .-** Haga clic en "Consultar" para obtener la ** clave pública ** para las pruebas.
+
+-**Usuario (Usuario) .-** Este es el identificador de su empresa para Pagando Check API®, esta es la forma en que Pagando reconoce las transacciones de los pagos de su cuenta.
+
+-**Clave pública para pruebas .-** Esta es la contraseña para obtener un token de acceso, con este token se podría configurar el plugin de woocommerce.
+
+<img width="1670" alt="Captura_de_pantalla_2020-07-17_a_la(s)_14 20 26" src="https://user-images.githubusercontent.com/88348069/128936180-3b6237aa-b814-4e73-a622-13bcbb392394.png">
 
 ### 5. Activar el método de pago.
-En el menu lateral izquierdo, en la sección **Woocommerce**, seleccionar la opción **Ajustes**, en la opción **Pagos**, activar Pagando como método de pago. 
+En el menu lateral izquierdo, en la sección **Woocommerce**, seleccionar la opción **Ajustes**, en la opción **Pagos**, activar **Pagar con tu cuenta Pagando**. 
 
