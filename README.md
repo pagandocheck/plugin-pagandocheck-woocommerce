@@ -124,3 +124,4 @@ Para agregar las credenciales generadas previamente, es necesario ingresar al pa
 ## 6. Activar el método de pago.
 En el menu lateral izquierdo, en la sección **Woocommerce**, seleccionar la opción **Settings**, en la opción **Payments**, activar **Pagar con tu cuenta Pagando** y **Pagar como invitado**. 
 
+<img width="1429" alt="Captura de Pantalla 2021-08-20 a la(s) 10 44 20" src="https://user-images.githubusercontent.com/88348069/130259008-bd272d42-df8d-4596-a5c8-2b344235d370.png">
