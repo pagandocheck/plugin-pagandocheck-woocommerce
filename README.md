@@ -4,8 +4,16 @@ Plugin de Woocommerce para pagos con Pagando Check.
 
 ## Instalar plugin de Pagando para pagos en la tienda.
 
-### 1. Crear un usuario administrador.
-Para poder generar un usuario administrador, hay que agregarlo mediante la herramienta de MAMP llamada phpMyAdmin que anteriormente se usó. Seleccionar la base de datos ```woocommerce ``` y en la seccion ```SQL```,pegar la siguiente connsulta:
+## Requisitos previos
+
+  - Tener una **cuenta** de **empresa** en **Pagando Check**.
+  - Tener una tienda de Woocommerce, si no la tiene, puede instalar nuestra tienda demo siguiendo las instrucciones de este [repositorio](https://github.com/pagandocheck/woocommerce-store).
+  - Tener permisos de administrador o poder realizar modificaciones o configuraciones del módulo de **Pagando Check**.
+  - Ya que el módulo de **Pagando Check** se **utiliza** para que un **sitio web externo pueda procesar pagos**,
+  se recomienda que este tipo de pago lo configure una persona con conocimientos técnicos.
+
+## 1. Crear un usuario administrador.
+Para poder generar un nuevo usuario administrador, hay que agregarlo mediante la herramienta de MAMP llamada phpMyAdmin, que anteriormente se usó en la instalaciónn de la tienda demo. Seleccionar la base de datos ```woocommerce ``` y en la seccion ```SQL```,pegar la siguiente connsulta:
 
 ```
 -- Cambiar valores
@@ -62,30 +70,57 @@ SET @user_email = 'demo@demo.com';
 SET @display_name = 'Nombre Demo';
 ```
 
-### 2. Iniciar sesión en Wordpress
-Ingresar a la página de configuración de Wordpress de nuestra tienda **http://localhost/woocommerce-store/wp-login.php** e iniciar sesión con las credenciales que se configuraron en el paso anterior.
+## 2. Iniciar sesión en Wordpress
+Ingresar a la página de configuración de Wordpress de nuestra tienda **http://localhost/woocommerce-store/wp-login.php** e iniciar sesión con las credenciales que se configuraron en el paso anterior, o con nuestras credenciales default:
+
+```
+user: demo
+password: demo
+
+```
 
 Se mostrará la página de Wordpress instalada localmente, en la cual se pueden configurar las diferentes opciones de la tienda de Woocommerce, incluyendo los productos, precios y métodos de pago.
 
-### 3. Agregar plugin de Pagando.
-Ir al menu lateral izquierdo, en la sección **Plugins**, seleccionar la opción **Agregar plugin** y despues en la opción **cargar plugin**, subir la carpeta comprimida (.zip) con el plugin de Pagando.
+## 3. Agregar plugin de Pagando.
+Para obtener el modulo debe clonar este proyecto de github en su equipo de computo con el siguiente comando:
 
-### 3. Activar plugin
-Para activar el plugin , ir al menu lateral izquierdo, en la sección **Plugins**, y seleccionar **Activar** en el plugin de Pagando. Cuando se ha realizado correctamente , deberá aparecer **Pagando** en el menú lateral izquierdo.
+```
+git clone git@github.com:pagandocheck/plugin-pagandocheck-woocommerce.git
+```
 
-### 4. Agregar credenciales.
-Para poder aceptar pagos con **Pagando Check**, es necesario configurar el usuario y la llave de prueba generados en la plataforma de **Pagando**.
+Una vez descargado hay que comprimir la carpeta **plugin-pagandocheck-woocommerce**, despues en menu lateral izquierdo del panel de administración de la tienda, en la sección **Plugins**, seleccionar la opción **Add plugin** y despues en la opción **upload plugin**, subir la carpeta comprimida (.zip) con el plugin de **Pagando Check**.
 
-En el panel de administración ,seleccionar la opción **Api para sitio web**. En la siguiente sección **"Genera tu llave de Pruebas"** incluye un usuario y la opción de recuperar una clave pública para la prueba, si lo desea, es posible generar una nueva clave cada vez que lo desee por seguridad.
+## 4. Activar plugin
+Para activar el plugin , ir al menu lateral izquierdo, en la sección **Plugins > Installed Plugins**, y seleccionar **Activate** en el plugin de **Pagando Check**. Cuando se ha realizado correctamente , deberá aparecer **Pagando** en el menú lateral izquierdo.
 
--**Consultar (Obtener clave) .-** Haga clic en "Consultar" para obtener la ** clave pública ** para las pruebas.
+## 5. Generar llaves de prueba.
+Para poder aceptar pagos con **Pagando Check**, es necesario configurar un usuario y una llave de prueba.
 
--**Usuario (Usuario) .-** Este es el identificador de su empresa para Pagando Check API®, esta es la forma en que Pagando reconoce las transacciones de los pagos de su cuenta.
+Para obtener sus llaves de prueba debe ingresar con su cuenta empresarial a https://negocios.pagando.mx
 
--**Clave pública para pruebas .-** Esta es la contraseña para obtener un token de acceso, con este token se podría configurar el plugin de woocommerce.
+<img width="1266" alt="Captura de Pantalla 2021-08-11 a la(s) 13 40 38" src="https://user-images.githubusercontent.com/88348069/129092607-1e4b96f6-cd8e-4538-a9e0-d2094361eb47.png">
 
-<img width="1670" alt="Captura_de_pantalla_2020-07-17_a_la(s)_14 20 26" src="https://user-images.githubusercontent.com/88348069/128936180-3b6237aa-b814-4e73-a622-13bcbb392394.png">
+Una vez dentro, en el menú de opciones, dentro del apartado de pagos, ingresara a **API para sitio web**. Y luego hacer clic en **Botón Checkout**.
 
-### 5. Activar el método de pago.
-En el menu lateral izquierdo, en la sección **Woocommerce**, seleccionar la opción **Ajustes**, en la opción **Pagos**, activar **Pagar con tu cuenta Pagando**. 
+<img width="784" alt="Captura de Pantalla 2021-08-11 a la(s) 13 44 18" src="https://user-images.githubusercontent.com/88348069/129093055-57741a7a-3a67-4da6-a13b-0ca99a83fdf3.png">
+
+Depués en la opción **Woocommerce**, en la primera sección, podrá generar y recuperar sus llaves de prueba.
+
+<img src="https://rapi-doc.s3.amazonaws.com/Captura+de+Pantalla+2021-08-03+a+la(s)+11.48.57.png" style="display: block; margin-left: auto; margin-right: auto;"/>
+
+### Configuración de módulo Checkout
+
+Aquí se configura la dirección a donde quiere regresar a sus clientes una vez que se ha efectuado el pago, entre otras configuraciones.
+
+<img src="https://rapi-doc.s3.amazonaws.com/Captura+de+Pantalla+2021-08-03+a+la(s)+11.45.21.png" style="display: block; margin-left: auto; margin-right: auto;"/>
+
+### Agregar credenciales en la tienda
+
+Para agregar las credenciales generadas previamente, es necesario ingresar al panel de administración de la tienda (http://localhost/woocommerce-store/wp-admin/admin.php) y agregarlas accediendo al menu lateral izquierdo **Pagando**.
+
+<img width="813" alt="Captura de Pantalla 2021-08-20 a la(s) 10 07 25" src="https://user-images.githubusercontent.com/88348069/130254111-d53c7c1e-9a38-4e41-a0ce-86eeeea7862d.png">
+
+
+## 6. Activar el método de pago.
+En el menu lateral izquierdo, en la sección **Woocommerce**, seleccionar la opción **Settings**, en la opción **Payments**, activar **Pagar con tu cuenta Pagando** y **Pagar como invitado**. 
 
