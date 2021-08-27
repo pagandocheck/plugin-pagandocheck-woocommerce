@@ -62,8 +62,8 @@ function init_pagando_gateway_class()
 	class WC_Pagando_Gateway extends WC_Payment_Gateway
 	{
 
-		public static $backendServerUri = "https://api.pagandocheck.com";
-		public static $externalPagandoUri = "https://pagandocheck.com";
+		public static $backendServerUri = "https://api.pagandocheck.com:443";
+		public static $externalPagandoUri = "https://checkout.pagandocheck.com";
 
 		public function __construct() {
 			add_action('woocommerce_api_wc_pagando_gateway', array(&$this, 'handle_callback'));
