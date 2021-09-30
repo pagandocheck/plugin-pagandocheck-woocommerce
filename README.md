@@ -112,7 +112,7 @@ Depués en la opción **Woocommerce**, en la primera sección, podrá generar y 
 
 Aquí se configura la dirección a donde quiere regresar a sus clientes una vez que se ha efectuado el pago, entre otras configuraciones.
 
-<img width="816" alt="redirect-config" src="https://user-images.githubusercontent.com/88348069/135501874-3a18fa09-f7d5-4100-b9be-bed71d3436a8.png" style="display: block; margin-left: auto; margin-right: auto;">
+<img width="804" alt="redirect-config-woocommerce" src="https://user-images.githubusercontent.com/88348069/135505758-ff43a804-1135-4f82-a913-fab3e2e3f9e9.png">
 
 ### Agregar credenciales en la tienda
 
